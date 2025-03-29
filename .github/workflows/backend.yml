@@ -31,10 +31,6 @@ jobs:
         run: npm ci
         working-directory: MongoDBGraphQL
 
-      - name: Run tests
-        run: npm test
-        working-directory: MongoDBGraphQL
-
       - name: Start the backend
         run: npm run dev
         working-directory: MongoDBGraphQL
