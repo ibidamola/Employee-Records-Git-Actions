@@ -31,13 +31,26 @@ jobs:
         run: npm ci
         working-directory: MongoDBGraphQL
 
+
+      - name: Log into Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
       - name: Build Docker image
         run: |
            docker build -t backend-app .
+           docker tag backend-app aeeshar01/backend-app:latest
+           docker push aeeshar01/backend-app:latest
         working-directory: MongoDBGraphQL
 
-
-      - name: Run Backend Container
-        run: |
-          docker run -d -p 4020:4020 backend-app
-        working-directory: MongoDBGraphQL
+      - name: Deploy to AWS EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.AWS_HOST }}
+          username: ${{ secrets.AWS_USERNAME }}
+          key: ${{ secrets.AWS_PRIVATE_KEY }}
+          script: |
+            docker stop backend-container || true
+            docker rm backend-container || true
+            docker pull aeeshar01/backend-app:latest
+            docker run -d --name backend-container -p 4020:4020 aeeshar01/backend-app:latest
+      
