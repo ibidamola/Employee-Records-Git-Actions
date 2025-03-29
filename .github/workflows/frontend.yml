@@ -18,12 +18,11 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18,20]
+        node-version: [18]
         include:
           - node-version: 18
             cache: 'npm'
-          - node-version: 20
-            cache: 'npm'
+         
 
     steps:
     - name: Check out the repository
