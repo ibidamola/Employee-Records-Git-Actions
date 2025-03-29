@@ -1,0 +1,152 @@
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cinzel:wght@600&family=Lobster&family=Taviraj:wght@700&display=swap');
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    -webkit-animation: App-logo-spin infinite 20s linear;
+}
+}
+
+#search_tr{
+  color: #fff;
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+}
+  to {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+}
+}
+header h1{
+  font-size: 4rem;
+  margin-left: 10px;
+  color: #fff;
+  font-family: 'Lobster', sans-serif;
+  
+}
+header{
+  display:flex;
+  background-color: #070e43;
+  height: 10vh;
+  align-items: center;
+}
+nav{
+  display: flex;
+  font-size: 1.2rem;
+  margin-left: 50%;
+}
+nav a{
+  text-decoration: none;
+  color: #fff;
+}
+nav a:hover{
+  color:aqua
+}
+.background-container{
+  background-image: url("../public/stacked-waves-haikei\ \(1\).svg");
+  
+  background-repeat: no-repeat;
+  background-size: cover; /* You can use 'contain' if you want it to fully cover the container */
+  /* Other styles for your container */
+  width: 100%;
+  height: 65vh;
+  background-position:top;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff
+
+
+}
+.background-container img{
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+}
+.background-container p{
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.3rem;
+}
+footer{
+  display:flex;
+  background-color: #070e43;
+  color: #fff;
+  justify-content: center;
+  height: 10vh;
+  align-items: center;
+}
+
+table{
+  padding-top: 30px;
+  background-color: #070e43;
+}
+table tr{
+  background-color: #070e43;
+}
+
+#button{
+  background-color: #070e43;
+  width: 170px;
+  height: 40px;
+  color:#fff;
+  font-size: 1.3rem;
+
+  margin: 10px auto;
+}
+
+.insertbody{
+ /* background-image: url("../public/stacked-waves-haikei\ \(1\).svg");*/
+  background-color: #070e43;
+  padding-bottom: 30px;
+  background-size: cover;
+}
+
+.form_glassmorphism{
+  /*Fromhttps:;
+  //css.glass*/background: rgba(255, 255, 255, 0.27);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.9px);
+  -webkit-backdrop-filter: blur(11.9px);
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  color: #fff;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
