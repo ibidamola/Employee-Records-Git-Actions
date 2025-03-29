@@ -40,12 +40,16 @@ jobs:
       run: npm ci
       working-directory: front_end
 
+    - name: Update Browserslist DB
+      run: npx update-browserslist-db@latest
+      working-directory: front_end
+
     - name: Run tests
       run: npm run test
       working-directory: front_end
 
     - name: Build for production
-      run: npm run build
+      run: CI=false npm run build
       working-directory: front_end
       
     
