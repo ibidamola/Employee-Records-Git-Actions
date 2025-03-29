@@ -51,5 +51,16 @@ jobs:
     - name: Build for production
       run: CI=false npm run build
       working-directory: front_end
+
+    - name: Build Docker image
+      run: |
+        cd front_end
+        docker build -t frontend-app .
+        
+    - name: Run Frontend Container
+      run: |
+        docker run -d -p 3000:3000 frontend-app
+      working-directory: front_end
+
       
     
