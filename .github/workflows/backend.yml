@@ -49,8 +49,8 @@ jobs:
           username: ${{ secrets.AWS_USERNAME }}
           key: ${{ secrets.AWS_PRIVATE_KEY }}
           script: |
-            docker stop backend-container || true
-            docker rm backend-container || true
-            docker pull aeeshar01/backend-app:latest
-            docker run -d --name backend-container -p 4020:4020 aeeshar01/backend-app:latest
+            sudo docker stop backend-container || true
+            sudo docker rm backend-container || true
+            sudo docker pull aeeshar01/backend-app:latest
+            sudo docker run -d --name backend-container -p 4020:4020 aeeshar01/backend-app:latest
       
