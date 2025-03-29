@@ -31,6 +31,13 @@ jobs:
         run: npm ci
         working-directory: MongoDBGraphQL
 
-      - name: Start the backend
-        run: npm run dev &
+      - name: Build Docker image
+        run: |
+           docker build -t backend-app .
+        working-directory: MongoDBGraphQL
+
+
+      - name: Run Backend Container
+        run: |
+          docker run -d -p 4020:4020 backend-app
         working-directory: MongoDBGraphQL

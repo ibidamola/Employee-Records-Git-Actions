@@ -1,0 +1,24 @@
+# use an official node js image
+FROM node:20-alpine
+#set the working directory
+
+WORKDIR /app
+
+#copy the package.json and package-lock.json file
+
+COPY package*.json ./
+
+#install the dependencies
+
+RUN npm install
+
+#copy the rest of the application
+COPY . .
+
+#cause its the backend we expose the port, the port number will the same as that of the api server
+
+EXPOSE 4020
+
+#start the application
+
+CMD ["npm", "run", "dev"]
